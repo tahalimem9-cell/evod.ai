@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login -Evod </title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background: linear-gradient(135deg, #834f99, #342e2e);
+}
+
+.login-box{
+  width:350px;
+  background:urgb(110, 43, 123);
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 15px 40px rgba(0, 0, 0, 0.2);
+  text-align:center;
+}
+
+.logo{
+  font-size:56px;
+  font-weight:bold;
+  margin-bottom:10px;
+  color:#8f7495;
+}
+
+.subtitle{
+  font-size:20px;
+  color:#000000;
+  margin-bottom:20px;
+}
+
+input{
+  margin-bottom:15px;
+}
+
+button{
+  width:100%;
+  font-size:25px;
+}
+
+.footer{
+  margin-top:15px;
+  font-size:17px;
+  color:#000000;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">Evod AI</div>
+<div class="subtitle">Login to your dashboard</div>
+
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<div class="footer">Powered by Evod </div>
+
+</div>
+
+<script>
+
+function login(){
+
+let u = document.getElementById("username").value;
+let p = document.getElementById("password").value;
+
+if(u==="admin" && p==="1234"){
+localStorage.setItem("auth","true");
+window.location.href="/dashboard.html";
+}else{
+alert("Wrong credentials");
+}
+
+}
+
+</script>
+
+</body>
+</html>
